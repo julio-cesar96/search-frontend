@@ -39,6 +39,10 @@ export interface ProductDetail {
     name: string;
     value_name: string;
   }>;
+  seller?: {
+    id: number;
+    nickname: string;
+  };
 }
 
 export interface ProductDescription {
