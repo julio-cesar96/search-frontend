@@ -5,4 +5,22 @@ import react from "@vitejs/plugin-react-swc";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://api.mercadolibre.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+        // Forçar passar todos os headers, inclusive Authorization
+        configure: (proxy, options) => {
+          proxy.on("proxyReq", (proxyReq, req, res) => {
+            // Copia o header Authorization da requisição original
+            if (req.headers.authorization) {
+              proxyReq.setHeader("authorization", req.headers.authorization);
+            }
+          });
+        },
+      },
+    },
+  },
 });
