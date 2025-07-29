@@ -1,7 +1,7 @@
 import axios, { type AxiosRequestHeaders } from "axios";
 import type { ApiError } from "../types/product";
 
-const API_BASE_URL = "/api";
+const API_BASE_URL = "https://api.mercadolibre.com";
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
