@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { type AxiosRequestHeaders } from "axios";
 import type { ApiError } from "../types/product";
 
 const API_BASE_URL = "/api";
@@ -11,12 +11,15 @@ export const api = axios.create({
   },
 });
 
-// Interceptor de requisição para adicionar o token
 api.interceptors.request.use((config) => {
   const token = import.meta.env.VITE_MELI_ACCESS_TOKEN;
-  if (token && config.headers && typeof config.headers.set === "function") {
-    config.headers.set("Authorization", `Bearer ${token}`);
+
+  if (token && config.headers) {
+    (config.headers as AxiosRequestHeaders)[
+      "Authorization"
+    ] = `Bearer ${token}`;
   }
+
   return config;
 });
 
