@@ -12,8 +12,8 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
         // Forçar passar todos os headers, inclusive Authorization
-        configure: (proxy, options) => {
-          proxy.on("proxyReq", (proxyReq, req, res) => {
+        configure: (proxy) => {
+          proxy.on("proxyReq", (proxyReq, req) => {
             // Copia o header Authorization da requisição original
             if (req.headers.authorization) {
               proxyReq.setHeader("authorization", req.headers.authorization);
