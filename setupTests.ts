@@ -1,4 +1,5 @@
 import { vi } from "vitest";
+import "@testing-library/jest-dom";
 
 vi.stubGlobal("import.meta", {
   env: {
