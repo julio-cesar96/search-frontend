@@ -41,7 +41,7 @@ export interface CardProps {
   onClick?: () => void;
 }
 
-export interface BoxProps {
+export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
   className?: string;
   children: React.ReactNode;
   as?: keyof JSX.IntrinsicElements;

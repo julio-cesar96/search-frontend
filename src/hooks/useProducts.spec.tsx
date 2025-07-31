@@ -1,4 +1,3 @@
-// __tests__/useProducts.test.tsx
 import { renderHook, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MercadoLivreClient } from "../api/mercadoLivreApi.client";
@@ -8,7 +7,6 @@ import {
   useSearchProducts,
 } from "./useProducts";
 
-// Mocks
 jest.mock("../../clients/mercadoLivreClient", () => ({
   MercadoLivreClient: {
     get: jest.fn(),
