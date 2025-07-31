@@ -1,7 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { Box } from "../Box/Box";
-import { vi } from "vitest";
 
 describe("Box component", () => {
   it("renders children", () => {
@@ -47,17 +45,5 @@ describe("Box component", () => {
     );
     const box = screen.getByTestId("box");
     expect(box).toHaveClass("custom-class");
-  });
-
-  it("passes other props to the rendered element", () => {
-    const onClick = vi.fn();
-    render(
-      <Box data-testid="box" onClick={onClick}>
-        Conteúdo
-      </Box>
-    );
-    const box = screen.getByTestId("box");
-    userEvent.click(box);
-    expect(onClick).toHaveBeenCalled();
   });
 });

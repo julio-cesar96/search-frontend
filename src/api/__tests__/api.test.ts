@@ -1,7 +1,7 @@
 import { describe, it, vi, expect, beforeEach, afterEach } from "vitest";
 import MockAdapter from "axios-mock-adapter";
-import type { api as ApiInstanceType } from "./api";
-import type { ApiError } from "../types/product";
+import type { api as ApiInstanceType } from "../api";
+import type { ApiError } from "../../types/product";
 
 describe("api instance", () => {
   let api: typeof ApiInstanceType;
@@ -16,7 +16,7 @@ describe("api instance", () => {
     });
 
     // Importa os módulos dinamicamente após definir o stub global
-    const apiModule = await import("./api");
+    const apiModule = await import("../api");
     const MockAdapterModule = await import("axios-mock-adapter");
 
     api = apiModule.api;

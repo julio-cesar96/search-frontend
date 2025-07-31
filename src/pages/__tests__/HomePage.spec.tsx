@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 import { MemoryRouter, useNavigate } from "react-router-dom";
-import HomePage from "./HomePage";
+import HomePage from "../HomePage";
 
 vi.mock("react-router-dom", async () => {
   const actual = await vi.importActual("react-router-dom");

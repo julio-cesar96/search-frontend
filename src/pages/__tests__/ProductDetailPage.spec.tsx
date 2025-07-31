@@ -3,8 +3,8 @@ import userEvent from "@testing-library/user-event";
 import { vi, describe, it, beforeEach, expect } from "vitest";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import type { Mock } from "vitest";
-import ProductDetailPage from "./ProductDetailPage";
-import { useProductDetail } from "../hooks/useProducts";
+import { useProductDetail } from "../../hooks/useProducts";
+import ProductDetailPage from "../ProductDetailPage";
 
 let mockedNavigate = vi.fn();
 

@@ -1,11 +1,11 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MercadoLivreClient } from "../api/mercadoLivreApi.client";
+import { MercadoLivreClient } from "../../api/mercadoLivreApi.client";
 import {
   useProductDescription,
   useProductDetail,
   useSearchProducts,
-} from "./useProducts";
+} from "../useProducts";
 
 jest.mock("../../clients/mercadoLivreClient", () => ({
   MercadoLivreClient: {

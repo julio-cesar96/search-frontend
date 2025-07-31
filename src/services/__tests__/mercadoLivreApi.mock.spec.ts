@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { MercadoLivreApiMock } from "./mercadoLivreApi.mock";
-import { mockProductDetails } from "../mocks/productDetail.mock";
+import { MercadoLivreApiMock } from "../mercadoLivreApi.mock";
+import { mockProductDetails } from "../../mocks/productDetail.mock";
 
 describe("MercadoLivreApiMock", () => {
   it("searchProducts should return filtered and paginated results", async () => {

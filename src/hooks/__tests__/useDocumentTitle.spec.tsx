@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { render } from "@testing-library/react";
-import { useDocumentTitle } from "./useDocumentTitle";
+import { useDocumentTitle } from "../useDocumentTitle";
 
 function TestComponent({ title }: { title: string }) {
   useDocumentTitle(title);
