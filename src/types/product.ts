@@ -3,51 +3,20 @@ export interface Product {
   title: string;
   price: number;
   thumbnail: string;
-  condition: "new" | "used";
-  currency_id: string;
-  permalink: string;
-  seller: {
-    id: number;
-    nickname: string;
-  };
-  shipping: {
-    free_shipping: boolean;
-  };
 }
 
 export interface ProductDetail {
   id: string;
   title: string;
   price: number;
-  thumbnail: string;
-  pictures: Array<{
-    id: string;
-    url: string;
-    secure_url: string;
-  }>;
-  condition: "new" | "used";
-  currency_id: string;
-  permalink: string;
-  seller_id: number;
-  category_id: string;
-  warranty: string;
-  shipping: {
-    free_shipping: boolean;
-  };
-  attributes: Array<{
-    id: string;
-    name: string;
-    value_name: string;
-  }>;
-  seller?: {
-    id: number;
-    nickname: string;
-  };
+  pictures: Array<{ url: string }>;
+  description: string;
 }
 
 export interface ProductDescription {
-  text: string;
   plain_text: string;
+  text?: string;
+  last_updated?: string;
 }
 
 export interface SearchResponse {
