@@ -1,4 +1,4 @@
-import React, { type JSX } from "react";
+import React, { type JSX, type ReactNode } from "react";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -62,4 +62,10 @@ export interface SearchInputProps {
   customSearchIcon?: React.ReactNode;
   customLoadingIcon?: React.ReactNode;
   variant?: "default" | "custom";
+}
+
+export interface ErrorMessageProps {
+  message?: string;
+  onRetry?: () => void;
+  children?: ReactNode;
 }
